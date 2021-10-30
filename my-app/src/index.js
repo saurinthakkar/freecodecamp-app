@@ -35,7 +35,11 @@ const Image = () => (
 );
 
 const Title = () => <h1>Young Pandavas Book 2: The School For Warriors</h1>;
-const Author = () => <h4>Anupam Arunachalam</h4>;
+const Author = () => (
+  <h4 style={{ color: "#90ee90", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Anupam Arunachalam
+  </h4>
+);
 
 // const Greeting = () => {
 //   return React.createElement(
