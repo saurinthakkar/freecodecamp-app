@@ -3,43 +3,49 @@ import ReactDOM from "react-dom";
 
 //Css
 import "./index.css";
+//setup vars
+
+const firstBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/515Y-kC7EQL._SX310_BO1,204,203,200_.jpg",
+  title: "The Blue Umbrella",
+  author: "Ruskin Bond",
+  alt: "The Blue Umbrella",
+};
+
+const secondBook = {
+  img: "https://images-eu.ssl-images-amazon.com/images/I/51Zky37XqoL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+  title: "Young Pandavas Book 2: The School For Warriors",
+  author: "Anupam Arunachalam",
+  alt: "Young Pandavas 2",
+};
 
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={props.img} alt=""></img>
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://images-eu.ssl-images-amazon.com/images/I/51Zky37XqoL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"
-    alt="Young Pandavas 2"
-  ></img>
-);
-
-const Title = () => <h1>Young Pandavas Book 2: The School For Warriors</h1>;
-const Author = () => (
-  <h4 style={{ color: "#90ee90", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-    Anupam Arunachalam
-  </h4>
-);
 
 // const Greeting = () => {
 //   return React.createElement(
